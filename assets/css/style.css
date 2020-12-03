@@ -1,58 +1,4 @@
 @charset "utf-8";
-
-/*------------------------------------------------------------------
-  [Table of contents]
-  * To keep an overview of structure of your code, we make use of table of 
-  * content. Table of content is use display the overall tree structure of your
-  * Layout. 
-  * (NOTE: Remove this commented code once you start developing the code.
-  * Remove the following table of content and add your own as this is just and 
-  * example to let you know)
-
-  1. CSS Reset Code
-    1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
-    1.2. Clear Fix
-    1.3. Font class declaration
-  2. Body
-  3. Header / .header
-    2.1. Navigation / .navbar
-  4. Content / .content
-    4.1. Left column / .leftcolumn
-    4.2. Right column / .rightcolumn
-    4.3. Sidebar / .sidebar
-      4.3.1. RSS / .rss
-      4.3.2. Search / .search
-      4.3.3. Boxes / .box
-      4.3.4. Sideblog / .sideblog
-      4.3.5. Advertisements / .ads
-  5. Footer / .footer
-  ------------------------------------------------------------------*/
-
-/*------------------------------------------------------------------
-  [Color codes]
-  * Mention the color code you have used in your html document for the respective
-  * elements given as follow. 
-  * (NOTE: Remove this commented code once you start developing the code. 
-  * Remove the following color code and add your own as this is just and 
-  * example to let you know)
-
-  Header nav: #e5e5df (Cararra)
-  Header nav a (hover): #fff (white)
-  Header nav a (active): #fff (white)
--------------------------------------------------------------------*/
-
-/*------------------------------------------------------------------
-  [Typography]
-  * Mention the Typography you have used in your html document for the respective
-  * elements given as follow.
-  * (NOTE: Remove this commented code once you start developing the code. 
-  * Remove the following typography and add your own as this is just and 
-  * example to let you know)
-
-  Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  -------------------------------------------------------------------*/
-
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
@@ -79,7 +25,7 @@ time, mark, audio, video {
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, main {
+footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
@@ -107,6 +53,7 @@ strong {
 em { font-style: italic; }
 
 img {
+  width: 100%;
   border: 0;
   vertical-align: middle;
 }
@@ -120,11 +67,10 @@ sup {
 }
 
 sup { top: -.7em; }
-
 sub { bottom: -.25em; }
 
 /* 1.2. Clear Fix
-   ========================================================================== */
+   ========================== */
 
 .cf:before,
 .cf:after {
@@ -133,23 +79,142 @@ sub { bottom: -.25em; }
 }
 
 .cf:after { clear: both; }
+.cf { *zoom: 1; }
 
-/* 1.3. Font class declaration
-   ========================================================================== */
-/*
- * Mention the font property (eg: font-family, font-size, font-weight, font-style
- * etc) that have been commonly used in the html document. Make a class of it and
- * apply to the element wherever it is needed. If any single property in changed,
- * then override only that property in the particular class which is used for the
- * element.
- * (NOTE: Remove this commented code once you start 
- * developing the code. Remove the following font class and add your own
- * as this is just and example to let you know. If there is only one font family
- * followed throughout the site, then menstion the font property in body. No need
- * of creating an extra class for it) */
-
-.futura-bold-font {
-  font-family: 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: bold;
+/* BODY STYLING 
+   ========================== */
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
+
+a { 
+  display: inline-block;
+  text-decoration: none; 
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+/* WRAPPER
+   ========================== */
+.wrapper {
+  max-width: 1360px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+body,
+button,input,textarea {
+ font-family: "Poppins", sans-serif; 
+}
+
+.form-group, 
+.gender-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.gender-button { 
+  width: 70%;
+  justify-content: flex-start;
+  margin:0; 
+}
+
+.border{ border:1.8px solid #000; }
+.red-border{ border:1.8px solid #e74c36; }
+.green-border{ border:1.8px solid #2ecc71; }
+.red-text{ color:red }
+.green-text{ color: #2ecc71}
+
+span{
+  font-size: 9.5px;
+  display: none;
+}
+
+/*=================================
+  main styling starts here
+=================================*/
+
+
+/* form styling starts here
+   ========================== */
+.form-container {
+  width: 80%;
+  margin: 70px auto 0;
+  border: 1.8px solid #000;
+}
+
+form {
+  width: 70%;
+  margin: 20px auto;
+  border: 1.8px solid #000;
+  padding: 20px 70px;
+}
+
+form label { margin-right: 30px; }
+
+.input-box{
+  width: 70%;
+}
+input[type="text"], #address{
+  width: 100%;
+  resize: none;
+  padding: 5px;
+  outline: none;
+}
+
+input[type="radio"], input[type="checkbox"]{
+ margin: 0 15px 0px 0px;
+ transform: scale(1.4);
+}
+
+#address { height: 100px; }
+.align-left { justify-content: flex-start; }
+
+button {
+ font-size: 15px;
+ padding: 1px 20px;
+ outline: none;
+ border: 1.6px solid #000;
+ background-color: transparent;
+}
+
+.display,
+.display-box { 
+ width: 100%;  
+}
+
+.display { margin-bottom: 20px; }
+.display-box { display: flex; }
+.display-box:first-child { font-weight: 600; }
+
+.display-box li {
+    width: 15.8%;
+    text-align: center;
+    border: 1px solid #000; 
+    margin:0;
+    border-right: transparent;
+    padding: 5px 10px;
+}
+
+.display-box li:last-child { border-right: 1px solid #000;  }
+
+.display-box .btn{
+  color: #000;
+  background: #989090;
+  padding: 2px 20px;
+  border: 1.5px solid #000;
+}
+
+.buttons{  text-align:center; }
+.input-box.error  input{ border-color:#e74c36; }
+.input-box.error  span{ color:#e74c36; }
+.input-box.success  input{ border-color:#2ecc71; }
+.input-box.success  span{ color:#2ecc71; }
+
+
